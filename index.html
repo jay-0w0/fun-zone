@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎌 AnimeHub - Ultimate Entertainment Launcher</title>
+    <title>🎬 EntertainHub - Ultimate Entertainment Portal</title>
     <style>
         * {
             margin: 0;
@@ -16,7 +16,6 @@
             color: white;
             min-height: 100vh;
             padding: 15px;
-            /* ENHANCED BACKGROUND */
             background: 
                 linear-gradient(
                     135deg,
@@ -30,7 +29,6 @@
             position: relative;
         }
 
-        /* Enhanced texture overlay */
         body::before {
             content: '';
             position: fixed;
@@ -62,7 +60,7 @@
             padding: 0 10px;
         }
 
-        /* PROFESSIONAL LOGO SECTION */
+        /* ENTERAINHUB LOGO SECTION */
         .logo-section {
             display: flex;
             align-items: center;
@@ -101,7 +99,17 @@
             text-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        /* Header Styles - MOBILE OPTIMIZED */
+        .brand-tagline {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
+            background: linear-gradient(45deg, #FFEB3B, #E91E63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Header Styles */
         .header {
             margin-bottom: 40px;
             padding: 25px 20px;
@@ -131,7 +139,6 @@
             left: 100%;
         }
 
-        /* ULTIMATE TITLE - MOBILE FRIENDLY */
         .header h1 {
             font-size: clamp(2.2em, 6vw, 3.5em);
             margin-bottom: 12px;
@@ -167,7 +174,25 @@
             line-height: 1.4;
         }
 
-        /* Button Grid - MOBILE OPTIMIZED */
+        /* Content Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .category-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Button Grid */
         .launcher-buttons {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -175,7 +200,6 @@
             margin-bottom: 35px;
         }
 
-        /* Site Buttons - MOBILE FRIENDLY */
         .site-btn {
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.25);
@@ -238,7 +262,7 @@
         .site-btn:nth-child(5):hover,
         .site-btn:nth-child(5):active { background: rgba(120, 119, 198, 0.25); }
 
-        /* Open All Button - MOBILE OPTIMIZED */
+        /* Open All Button */
         .open-all {
             background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD93D, #A78BFA);
             border: none;
@@ -282,7 +306,6 @@
             50% { box-shadow: 0 18px 40px rgba(255, 107, 107, 0.6); }
         }
 
-        /* Emoji and Text - MOBILE OPTIMIZED */
         .emoji {
             font-size: clamp(1.8em, 6vw, 2.2em);
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
@@ -307,7 +330,7 @@
             text-shadow: 0 0 8px rgba(255,255,255,0.8);
         }
 
-        /* Footer - MOBILE FRIENDLY */
+        /* Footer */
         .footer {
             margin-top: 35px;
             padding: 20px 15px;
@@ -328,60 +351,20 @@
             line-height: 1.4;
         }
 
-        /* MOBILE-SPECIFIC ENHANCEMENTS */
+        /* Mobile Optimizations */
         @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            
-            .logo-section {
-                margin-bottom: 25px;
-                padding: 15px;
-            }
-            
-            .logo {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-            
-            .brand-name {
-                font-size: 1.8em;
-            }
-            
-            .header {
-                padding: 20px 15px;
-                margin-bottom: 30px;
-            }
-            
-            .launcher-buttons {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .site-btn {
-                padding: 18px 12px;
-                min-height: 70px;
-                border-radius: 15px;
-            }
-            
-            .open-all {
-                padding: 22px 18px;
-            }
+            body { padding: 10px; }
+            .logo-section { margin-bottom: 25px; padding: 15px; }
+            .logo { width: 50px; height: 50px; font-size: 20px; }
+            .brand-name { font-size: 1.8em; }
+            .header { padding: 20px 15px; margin-bottom: 30px; }
+            .launcher-buttons { grid-template-columns: 1fr; gap: 15px; }
+            .site-btn { padding: 18px 12px; min-height: 70px; border-radius: 15px; }
+            .open-all { padding: 22px 18px; }
+            .categories { gap: 10px; }
+            .category-tag { font-size: 0.8em; padding: 6px 12px; }
         }
 
-        /* Tablet Optimization */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .container {
-                max-width: 90%;
-            }
-            
-            .launcher-buttons {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Floating Animation for Header */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-12px); }
@@ -391,7 +374,6 @@
             animation: float 8s ease-in-out infinite;
         }
 
-        /* Subtle background particles */
         .particle {
             position: fixed;
             background: rgba(255, 255, 255, 0.1);
@@ -402,20 +384,31 @@
     </style>
 </head>
 <body>
-    <!-- Animated Background Particles -->
     <div id="particles"></div>
 
     <div class="container">
-        <!-- PROFESSIONAL LOGO SECTION -->
+        <!-- ENTERAINHUB LOGO SECTION -->
         <div class="logo-section">
-            <div class="logo">🎌</div>
-            <div class="brand-name">AnimeHub</div>
+            <div class="logo">🎬</div>
+            <div>
+                <div class="brand-name">EntertainHub</div>
+                <div class="brand-tagline">Your All-in-One Entertainment Portal</div>
+            </div>
+        </div>
+
+        <!-- Content Categories -->
+        <div class="categories">
+            <div class="category-tag">🎥 Anime</div>
+            <div class="category-tag">📚 Manga</div>
+            <div class="category-tag">🎬 Streaming</div>
+            <div class="category-tag">📖 Light Novels</div>
+            <div class="category-tag">✨ More Coming</div>
         </div>
 
         <!-- Header -->
         <div class="header">
-            <h1>Ultimate Entertainment Launcher</h1>
-            <p>Your gateway to infinite anime worlds ✨</p>
+            <h1>Ultimate Entertainment Portal</h1>
+            <p>One click to infinite entertainment worlds ✨</p>
         </div>
 
         <!-- Launcher Buttons -->
@@ -445,7 +438,6 @@
                 <span class="btn-text">Hotstar</span>
             </button>
 
-            <!-- Open All Button -->
             <button class="site-btn open-all" onclick="openAllSites()">
                 <span class="emoji">🚀</span>
                 <span class="btn-text">LAUNCH ALL SITES</span>
@@ -454,22 +446,18 @@
 
         <!-- Footer -->
         <div class="footer">
-            <p>✨ Professional entertainment hub crafted for true anime enthusiasts</p>
+            <p>✨ The ultimate hub for all your entertainment needs | Expandable & Future-Proof</p>
         </div>
     </div>
 
     <script>
-        // Function to open individual sites
         function openSite(url) {
             const newWindow = window.open(url, '_blank');
-            
-            // Fallback if popup blocked
             if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
                 window.location.href = url;
             }
         }
 
-        // Function to open all sites
         function openAllSites() {
             const sites = [
                 'https://anikai.to/home',
@@ -479,23 +467,20 @@
                 'https://www.hotstar.com/in/home'
             ];
             
-            // Open sites with delay for better experience
             sites.forEach((site, index) => {
                 setTimeout(() => {
                     openSite(site);
                 }, index * 300);
             });
             
-            // Professional confirmation message
             setTimeout(() => {
-                alert('🚀 AnimeHub activated! Launching your entertainment universe...');
+                alert('🚀 EntertainHub activated! Launching your complete entertainment experience...');
             }, 500);
         }
 
-        // Create floating particles
         function createParticles() {
             const container = document.getElementById('particles');
-            const particleCount = 8; // Reduced for mobile performance
+            const particleCount = 8;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
@@ -518,14 +503,11 @@
             }
         }
 
-        // Mobile touch optimizations
         document.addEventListener('touchstart', function() {}, {passive: true});
 
-        // Initialize when page loads
         window.onload = function() {
             createParticles();
             
-            // Add interactive effects to buttons
             const buttons = document.querySelectorAll('.site-btn');
             
             buttons.forEach(button => {
@@ -539,7 +521,6 @@
                     }
                 });
                 
-                // Touch feedback for mobile
                 button.addEventListener('touchstart', function() {
                     this.style.transform = 'translateY(-3px) scale(1.02)';
                 });
