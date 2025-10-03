@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎌 Ultimate Anime Launcher</title>
+    <title>🎌 AnimeHub - Ultimate Entertainment Launcher</title>
     <style>
         * {
             margin: 0;
@@ -15,10 +15,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
             min-height: 100vh;
-            padding: 20px;
-            /* ENHANCED BACKGROUND - More Visible but Still Blended */
+            padding: 15px;
+            /* ENHANCED BACKGROUND */
             background: 
-                /* Reduced opacity for more background visibility */
                 linear-gradient(
                     135deg,
                     rgba(101, 78, 163, 0.75) 0%,
@@ -26,7 +25,6 @@
                     rgba(233, 89, 155, 0.65) 70%,
                     rgba(255, 120, 120, 0.6) 100%
                 ),
-                /* Your beautiful anime image - More visible now */
                 url('https://images8.alphacoders.com/132/thumbbig-1321264.webp') 
                 center/cover fixed;
             position: relative;
@@ -56,23 +54,63 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
             text-align: center;
             position: relative;
             z-index: 2;
+            padding: 0 10px;
         }
 
-        /* Header Styles - ENHANCED TITLE */
+        /* PROFESSIONAL LOGO SECTION */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            animation: logoFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .brand-name {
+            font-size: 2.2em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFEB3B, #E91E63, #00BCD4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Header Styles - MOBILE OPTIMIZED */
         .header {
-            margin-bottom: 50px;
-            padding: 40px;
+            margin-bottom: 40px;
+            padding: 25px 20px;
             background: rgba(255, 255, 255, 0.08);
-            border-radius: 25px;
+            border-radius: 20px;
             backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 15px 30px rgba(0, 0, 0, 0.25),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
             position: relative;
             overflow: hidden;
@@ -93,11 +131,10 @@
             left: 100%;
         }
 
-        /* ULTIMATE TITLE ENHANCEMENT - BOLD & BEAUTIFUL */
+        /* ULTIMATE TITLE - MOBILE FRIENDLY */
         .header h1 {
-            font-size: 3.8em;
-            margin-bottom: 15px;
-            /* ENHANCED GRADIENT - More vibrant with edge */
+            font-size: clamp(2.2em, 6vw, 3.5em);
+            margin-bottom: 12px;
             background: linear-gradient(
                 135deg,
                 #FFEB3B 0%,
@@ -111,43 +148,15 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 
-                0 0 30px rgba(255, 235, 59, 0.5),
-                0 0 60px rgba(233, 30, 99, 0.3),
-                0 5px 15px rgba(0,0,0,0.4);
+                0 0 20px rgba(255, 235, 59, 0.5),
+                0 0 40px rgba(233, 30, 99, 0.3),
+                0 3px 10px rgba(0,0,0,0.4);
             font-weight: 800;
-            letter-spacing: 1px;
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Add glowing edge effect to title */
-        .header h1::after {
-            content: '🎌 Ultimate Anime Launcher';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                135deg,
-                transparent 0%,
-                rgba(255, 255, 255, 0.1) 50%,
-                transparent 100%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            z-index: -1;
-            animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes titleGlow {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.7; }
+            line-height: 1.2;
         }
 
         .header p {
-            font-size: 1.3em;
+            font-size: clamp(1em, 4vw, 1.2em);
             opacity: 0.95;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
             background: linear-gradient(45deg, #FFEB3B, #E91E63, #00BCD4);
@@ -155,37 +164,39 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 600;
+            line-height: 1.4;
         }
 
-        /* Button Grid */
+        /* Button Grid - MOBILE OPTIMIZED */
         .launcher-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-bottom: 35px;
         }
 
-        /* Site Buttons - Enhanced Glass Effect */
+        /* Site Buttons - MOBILE FRIENDLY */
         .site-btn {
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(255, 255, 255, 0.25);
             color: white;
-            padding: 25px 20px;
-            font-size: 1.3em;
-            border-radius: 20px;
+            padding: 20px 15px;
+            font-size: clamp(1em, 4vw, 1.2em);
+            border-radius: 18px;
             cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             backdrop-filter: blur(20px);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             position: relative;
             overflow: hidden;
-            min-height: 100px;
+            min-height: 80px;
             box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.2),
+                0 8px 25px rgba(0, 0, 0, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .site-btn::before {
@@ -199,43 +210,46 @@
             transition: left 0.7s;
         }
 
-        .site-btn:hover::before {
+        .site-btn:hover::before,
+        .site-btn:active::before {
             left: 100%;
         }
 
-        .site-btn:hover {
+        .site-btn:hover,
+        .site-btn:active {
             background: rgba(255, 255, 255, 0.18);
             border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-8px) scale(1.05);
+            transform: translateY(-5px) scale(1.03);
             box-shadow: 
-                0 25px 50px rgba(0,0,0,0.4),
+                0 20px 40px rgba(0,0,0,0.35),
                 0 0 0 3px rgba(255,255,255,0.1),
                 inset 0 1px 0 rgba(255, 255, 255, 0.4);
         }
 
-        .site-btn:active {
-            transform: translateY(-4px) scale(1.02);
-        }
-
         /* Individual Button Color Accents */
-        .site-btn:nth-child(1):hover { background: rgba(255, 107, 107, 0.25); }
-        .site-btn:nth-child(2):hover { background: rgba(255, 159, 28, 0.25); }
-        .site-btn:nth-child(3):hover { background: rgba(77, 171, 247, 0.25); }
-        .site-btn:nth-child(4):hover { background: rgba(229, 83, 128, 0.25); }
-        .site-btn:nth-child(5):hover { background: rgba(120, 119, 198, 0.25); }
+        .site-btn:nth-child(1):hover,
+        .site-btn:nth-child(1):active { background: rgba(255, 107, 107, 0.25); }
+        .site-btn:nth-child(2):hover,
+        .site-btn:nth-child(2):active { background: rgba(255, 159, 28, 0.25); }
+        .site-btn:nth-child(3):hover,
+        .site-btn:nth-child(3):active { background: rgba(77, 171, 247, 0.25); }
+        .site-btn:nth-child(4):hover,
+        .site-btn:nth-child(4):active { background: rgba(229, 83, 128, 0.25); }
+        .site-btn:nth-child(5):hover,
+        .site-btn:nth-child(5):active { background: rgba(120, 119, 198, 0.25); }
 
-        /* Open All Button - Spectacular */
+        /* Open All Button - MOBILE OPTIMIZED */
         .open-all {
             background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD93D, #A78BFA);
             border: none;
-            font-size: 1.5em;
-            padding: 30px;
-            margin-top: 20px;
+            font-size: clamp(1.1em, 4.5vw, 1.4em);
+            padding: 25px 20px;
+            margin-top: 15px;
             position: relative;
             overflow: hidden;
             grid-column: 1 / -1;
             box-shadow: 
-                0 15px 35px rgba(255, 107, 107, 0.3),
+                0 12px 30px rgba(255, 107, 107, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.4);
         }
 
@@ -256,46 +270,49 @@
             100% { transform: translateX(100%) rotate(45deg); }
         }
 
-        .open-all:hover {
+        .open-all:hover,
+        .open-all:active {
             background: linear-gradient(135deg, #FF5252, #FF7B3D, #FFCA28, #8B5CF6);
             animation: pulse 2s infinite;
-            transform: translateY(-8px) scale(1.05);
+            transform: translateY(-5px) scale(1.03);
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4); }
-            50% { box-shadow: 0 20px 45px rgba(255, 107, 107, 0.6); }
+            0%, 100% { box-shadow: 0 12px 30px rgba(255, 107, 107, 0.4); }
+            50% { box-shadow: 0 18px 40px rgba(255, 107, 107, 0.6); }
         }
 
-        /* Emoji and Text */
+        /* Emoji and Text - MOBILE OPTIMIZED */
         .emoji {
-            font-size: 2.5em;
+            font-size: clamp(1.8em, 6vw, 2.2em);
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
-        .site-btn:hover .emoji {
-            transform: scale(1.3) rotate(15deg);
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+        .site-btn:hover .emoji,
+        .site-btn:active .emoji {
+            transform: scale(1.2) rotate(10deg);
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
         }
 
         .btn-text {
             font-weight: 600;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-            font-size: 1.2em;
+            font-size: clamp(0.9em, 4vw, 1.1em);
             transition: all 0.3s ease;
         }
 
-        .site-btn:hover .btn-text {
-            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+        .site-btn:hover .btn-text,
+        .site-btn:active .btn-text {
+            text-shadow: 0 0 8px rgba(255,255,255,0.8);
         }
 
-        /* Footer */
+        /* Footer - MOBILE FRIENDLY */
         .footer {
-            margin-top: 40px;
-            padding: 25px;
+            margin-top: 35px;
+            padding: 20px 15px;
             background: rgba(0, 0, 0, 0.25);
-            border-radius: 20px;
+            border-radius: 18px;
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -303,34 +320,71 @@
 
         .footer p {
             opacity: 0.9;
-            font-size: 1em;
+            font-size: clamp(0.85em, 3.5vw, 1em);
             background: linear-gradient(45deg, #FFEB3B, #E91E63, #00BCD4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1.4;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.8em;
+        /* MOBILE-SPECIFIC ENHANCEMENTS */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .logo-section {
+                margin-bottom: 25px;
+                padding: 15px;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .brand-name {
+                font-size: 1.8em;
+            }
+            
+            .header {
+                padding: 20px 15px;
+                margin-bottom: 30px;
             }
             
             .launcher-buttons {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 15px;
             }
             
             .site-btn {
-                padding: 20px 15px;
-                min-height: 80px;
+                padding: 18px 12px;
+                min-height: 70px;
+                border-radius: 15px;
+            }
+            
+            .open-all {
+                padding: 22px 18px;
+            }
+        }
+
+        /* Tablet Optimization */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 90%;
+            }
+            
+            .launcher-buttons {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         /* Floating Animation for Header */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-12px); }
         }
 
         .header {
@@ -352,10 +406,16 @@
     <div id="particles"></div>
 
     <div class="container">
+        <!-- PROFESSIONAL LOGO SECTION -->
+        <div class="logo-section">
+            <div class="logo">🎌</div>
+            <div class="brand-name">AnimeHub</div>
+        </div>
+
         <!-- Header -->
         <div class="header">
-            <h1>🎌 Ultimate Anime Launcher</h1>
-            <p>Where art meets technology in perfect harmony ✨</p>
+            <h1>Ultimate Entertainment Launcher</h1>
+            <p>Your gateway to infinite anime worlds ✨</p>
         </div>
 
         <!-- Launcher Buttons -->
@@ -394,7 +454,7 @@
 
         <!-- Footer -->
         <div class="footer">
-            <p>✨ A digital masterpiece crafted for anime connoisseurs | Experience the fusion of art and innovation</p>
+            <p>✨ Professional entertainment hub crafted for true anime enthusiasts</p>
         </div>
     </div>
 
@@ -426,25 +486,25 @@
                 }, index * 300);
             });
             
-            // Artistic confirmation message
+            // Professional confirmation message
             setTimeout(() => {
-                alert('🎨 Digital canvas activated! Your entertainment universe is unfolding... 🚀');
+                alert('🚀 AnimeHub activated! Launching your entertainment universe...');
             }, 500);
         }
 
         // Create floating particles
         function createParticles() {
             const container = document.getElementById('particles');
-            const particleCount = 12;
+            const particleCount = 8; // Reduced for mobile performance
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 
-                const size = Math.random() * 8 + 4;
+                const size = Math.random() * 6 + 3;
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                const duration = Math.random() * 20 + 20;
+                const duration = Math.random() * 15 + 15;
                 const delay = Math.random() * 5;
                 
                 particle.style.width = `${size}px`;
@@ -452,11 +512,14 @@
                 particle.style.left = `${posX}%`;
                 particle.style.top = `${posY}%`;
                 particle.style.animation = `float ${duration}s ${delay}s infinite ease-in-out`;
-                particle.style.opacity = Math.random() * 0.3 + 0.1;
+                particle.style.opacity = Math.random() * 0.2 + 0.1;
                 
                 container.appendChild(particle);
             }
         }
+
+        // Mobile touch optimizations
+        document.addEventListener('touchstart', function() {}, {passive: true});
 
         // Initialize when page loads
         window.onload = function() {
@@ -467,13 +530,26 @@
             
             buttons.forEach(button => {
                 button.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-8px) scale(1.05)';
+                    this.style.transform = 'translateY(-5px) scale(1.03)';
                 });
                 
                 button.addEventListener('mouseleave', function() {
                     if (!this.classList.contains('open-all')) {
                         this.style.transform = 'translateY(0) scale(1)';
                     }
+                });
+                
+                // Touch feedback for mobile
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        if (!this.classList.contains('open-all')) {
+                            this.style.transform = 'translateY(0) scale(1)';
+                        }
+                    }, 150);
                 });
             });
         }
