@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Launcher</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .button {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 200px;
+            margin: 15px auto;
+        }
+        .button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        .open-all {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border: none;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎌 Anime Launcher</h1>
+        <p>Click any button to open your favorite sites!</p>
+        
+        <button class="button" onclick="window.open('https://anikai.to/home')">
+            🎥 AnimeKai
+        </button>
+        
+        <button class="button" onclick="window.open('https://animesuge.bz/home')">
+            🍿 AnimeSuge
+        </button>
+        
+        <button class="button" onclick="window.open('https://mangafire.to/home')">
+            📚 MangaFire
+        </button>
+        
+        <button class="button" onclick="window.open('https://www.netflix.com/browse')">
+            🎬 Netflix
+        </button>
+        
+        <button class="button" onclick="window.open('https://www.hotstar.com/in/home')">
+            📺 Hotstar
+        </button>
+        
+        <button class="button open-all" onclick="openAllSites()">
+            🚀 OPEN ALL SITES
+        </button>
+    </div>
+
+    <script>
+        function openAllSites() {
+            const sites = [
+                'https://anikai.to/home',
+                'https://animesuge.bz/home',
+                'https://mangafire.to/home',
+                'https://www.netflix.com/browse',
+                'https://www.hotstar.com/in/home'
+            ];
+            sites.forEach(site => {
+                window.open(site, '_blank');
+            });
+            alert('Opening all your favorite sites! 🚀');
+        }
+    </script>
+</body>
+</html>
