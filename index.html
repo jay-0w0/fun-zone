@@ -1,85 +1,290 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Launcher</title>
+    <title>🎌 Ultimate Anime Launcher</title>
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
+        * {
             margin: 0;
-            min-height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .button {
-            background: rgba(255,255,255,0.2);
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            border: 2px solid rgba(255,255,255,0.5);
-            padding: 15px 25px;
-            margin: 10px;
-            font-size: 1.1em;
-            border-radius: 10px;
+            min-height: 100vh;
+            padding: 20px;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Header Styles */
+        .header {
+            margin-bottom: 50px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .header:hover::before {
+            left: 100%;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #FFD700, #FF6B6B, #4ECDC4, #45B7D1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Button Grid */
+        .launcher-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* Site Buttons */
+        .site-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 25px 20px;
+            font-size: 1.3em;
+            border-radius: 20px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: block;
-            width: 200px;
-            margin: 15px auto;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+            min-height: 100px;
         }
-        .button:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
+
+        .site-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
         }
+
+        .site-btn:hover::before {
+            left: 100%;
+        }
+
+        .site-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.3),
+                0 0 0 3px rgba(255,255,255,0.1);
+        }
+
+        .site-btn:active {
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        /* Open All Button */
         .open-all {
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53, #FFD93D);
             border: none;
-            margin-top: 30px;
-            font-weight: bold;
+            font-size: 1.5em;
+            padding: 30px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            grid-column: 1 / -1;
+        }
+
+        .open-all::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .open-all:hover {
+            background: linear-gradient(45deg, #FF5252, #FF7B3D, #FFCA28);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateY(-8px) scale(1.05); }
+            50% { transform: translateY(-8px) scale(1.08); }
+        }
+
+        /* Emoji and Text */
+        .emoji {
+            font-size: 2.5em;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .site-btn:hover .emoji {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .btn-text {
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: 1.2em;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            opacity: 0.8;
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .launcher-buttons {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .site-btn {
+                padding: 20px 15px;
+                min-height: 80px;
+            }
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header {
+            animation: float 6s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🎌 Anime Launcher</h1>
-        <p>Click any button to open your favorite sites!</p>
-        
-        <button class="button" onclick="window.open('https://anikai.to/home')">
-            🎥 AnimeKai
-        </button>
-        
-        <button class="button" onclick="window.open('https://animesuge.bz/home')">
-            🍿 AnimeSuge
-        </button>
-        
-        <button class="button" onclick="window.open('https://mangafire.to/home')">
-            📚 MangaFire
-        </button>
-        
-        <button class="button" onclick="window.open('https://www.netflix.com/browse')">
-            🎬 Netflix
-        </button>
-        
-        <button class="button" onclick="window.open('https://www.hotstar.com/in/home')">
-            📺 Hotstar
-        </button>
-        
-        <button class="button open-all" onclick="openAllSites()">
-            🚀 OPEN ALL SITES
-        </button>
+        <!-- Header -->
+        <div class="header">
+            <h1>🎌 Ultimate Anime Launcher</h1>
+            <p>One click to infinite entertainment worlds! ✨</p>
+        </div>
+
+        <!-- Launcher Buttons -->
+        <div class="launcher-buttons">
+            <button class="site-btn" onclick="openSite('https://anikai.to/home')">
+                <span class="emoji">🎥</span>
+                <span class="btn-text">AnimeKai</span>
+            </button>
+
+            <button class="site-btn" onclick="openSite('https://animesuge.bz/home')">
+                <span class="emoji">🍿</span>
+                <span class="btn-text">AnimeSuge</span>
+            </button>
+
+            <button class="site-btn" onclick="openSite('https://mangafire.to/home')">
+                <span class="emoji">📚</span>
+                <span class="btn-text">MangaFire</span>
+            </button>
+
+            <button class="site-btn" onclick="openSite('https://www.netflix.com/browse')">
+                <span class="emoji">🎬</span>
+                <span class="btn-text">Netflix</span>
+            </button>
+
+            <button class="site-btn" onclick="openSite('https://www.hotstar.com/in/home')">
+                <span class="emoji">📺</span>
+                <span class="btn-text">Hotstar</span>
+            </button>
+
+            <!-- Open All Button -->
+            <button class="site-btn open-all" onclick="openAllSites()">
+                <span class="emoji">🚀</span>
+                <span class="btn-text">LAUNCH ALL SITES</span>
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>✨ Crafted with ❤️ for anime enthusiasts | Double-click to launch your entertainment universe!</p>
+        </div>
     </div>
 
     <script>
+        // Function to open individual sites
+        function openSite(url) {
+            const newWindow = window.open(url, '_blank');
+            
+            // Fallback if popup blocked
+            if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                window.location.href = url;
+            }
+        }
+
+        // Function to open all sites
         function openAllSites() {
             const sites = [
                 'https://anikai.to/home',
@@ -88,11 +293,34 @@
                 'https://www.netflix.com/browse',
                 'https://www.hotstar.com/in/home'
             ];
-            sites.forEach(site => {
-                window.open(site, '_blank');
+            
+            // Open sites with delay for better experience
+            sites.forEach((site, index) => {
+                setTimeout(() => {
+                    openSite(site);
+                }, index * 300);
             });
-            alert('Opening all your favorite sites! 🚀');
+            
+            // Cool confirmation message
+            setTimeout(() => {
+                alert('🚀 Launch sequence initiated! All your favorite sites are opening! ✨');
+            }, 500);
         }
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.site-btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.05)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
     </script>
 </body>
 </html>
