@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>🌀 Omnia Zone - Free streaming index Portal</title>
+    <title>🌀 Omnia Zone - Ultimate Entertainment Portal</title>
     <style>
         * {
             margin: 0;
@@ -23,10 +23,10 @@
             background: 
                 linear-gradient(
                     135deg,
-                    rgba(101, 78, 163, 0.75) 0%,
-                    rgba(164, 93, 185, 0.7) 30%,
-                    rgba(233, 89, 155, 0.65) 70%,
-                    rgba(255, 120, 120, 0.6) 100%
+                    rgba(101, 78, 163, 0.85) 0%,
+                    rgba(164, 93, 185, 0.8) 30%,
+                    rgba(233, 89, 155, 0.75) 70%,
+                    rgba(255, 120, 120, 0.7) 100%
                 ),
                 url('https://images8.alphacoders.com/132/thumbbig-1321264.webp') 
                 center/cover fixed;
@@ -44,13 +44,13 @@
             background: 
                 radial-gradient(
                     circle at 20% 80%,
-                    rgba(120, 119, 198, 0.2) 0%,
-                    transparent 50%
+                    rgba(120, 119, 198, 0.3) 0%,
+                    transparent 60%
                 ),
                 radial-gradient(
                     circle at 80% 20%,
-                    rgba(255, 119, 198, 0.15) 0%,
-                    transparent 50%
+                    rgba(255, 119, 198, 0.25) 0%,
+                    transparent 60%
                 );
             pointer-events: none;
             z-index: -1;
@@ -98,9 +98,9 @@
             top: 20px;
             left: 20px;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             color: white;
             padding: 12px 20px;
             border-radius: 50px;
@@ -111,14 +111,14 @@
             align-items: center;
             gap: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             -webkit-tap-highlight-color: transparent;
         }
 
         .back-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(0, 0, 0, 0.8);
             transform: translateX(-5px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
         }
 
         .back-btn.visible {
@@ -126,7 +126,7 @@
         }
 
         /* ============================================
-           OMNIA ZONE LOGO SECTION
+           OMNIA ZONE LOGO SECTION - IMPROVED VISIBILITY
            ============================================ */
         .logo-section {
             display: flex;
@@ -136,6 +136,10 @@
             margin-bottom: 30px;
             padding: 20px;
             flex-wrap: wrap;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* 
@@ -147,7 +151,7 @@
             height: 70px;
             border-radius: 18px;
             object-fit: cover;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.3);
             animation: logoFloat 4s ease-in-out infinite;
             background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
@@ -184,17 +188,17 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-shadow: 0 0 30px rgba(0,0,0,0.5);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .brand-tagline {
             font-size: 0.9em;
-            opacity: 0.8;
+            opacity: 1;
             margin-top: 5px;
-            background: linear-gradient(45deg, #FFEB3B, #E91E63);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-weight: 500;
         }
 
         .brand-text {
@@ -202,18 +206,18 @@
         }
 
         /* ============================================
-           HEADER STYLES
+           HEADER STYLES - IMPROVED VISIBILITY
            ============================================ */
         .header {
             margin-bottom: 40px;
-            padding: 25px 20px;
-            background: rgba(255, 255, 255, 0.08);
+            padding: 30px 25px;
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
             backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 
-                0 15px 30px rgba(0, 0, 0, 0.25),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                0 15px 30px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
             animation: float 8s ease-in-out infinite;
@@ -226,7 +230,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
             transition: left 0.8s;
         }
 
@@ -250,27 +254,29 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-shadow: 
-                0 0 20px rgba(255, 235, 59, 0.5),
-                0 0 40px rgba(233, 30, 99, 0.3),
+                0 0 30px rgba(255, 235, 59, 0.3),
+                0 0 60px rgba(233, 30, 99, 0.2),
                 0 3px 10px rgba(0,0,0,0.4);
             font-weight: 800;
             line-height: 1.2;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .header p {
             font-size: clamp(1em, 4vw, 1.2em);
-            opacity: 0.95;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            opacity: 1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             background: linear-gradient(45deg, #FFEB3B, #E91E63, #00BCD4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 600;
+            font-weight: 700;
             line-height: 1.4;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         /* ============================================
-           CATEGORY TAGS
+           CATEGORY TAGS - IMPROVED VISIBILITY
            ============================================ */
         .categories {
             display: flex;
@@ -281,17 +287,20 @@
         }
 
         .category-tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 18px;
             border-radius: 20px;
             font-size: 0.9em;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            white-space: nowrap;
+            color: #ffffff;
+            font-weight: 500;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         /* ============================================
-           MAIN PAGE BUTTONS
+           MAIN PAGE BUTTONS - IMPROVED VISIBILITY
            ============================================ */
         .launcher-buttons {
             display: grid;
@@ -301,7 +310,7 @@
         }
 
         .site-btn {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border: 2px solid rgba(255, 255, 255, 0.25);
             color: white;
             padding: 20px 15px;
@@ -318,11 +327,13 @@
             overflow: hidden;
             min-height: 80px;
             box-shadow: 
-                0 8px 25px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                0 8px 25px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
             width: 100%;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            font-weight: 600;
         }
 
         .site-btn::before {
@@ -332,7 +343,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
             transition: left 0.7s;
         }
 
@@ -343,32 +354,32 @@
 
         .site-btn:hover,
         .site-btn:active {
-            background: rgba(255, 255, 255, 0.18);
+            background: rgba(0, 0, 0, 0.7);
             border-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-5px) scale(1.03);
             box-shadow: 
-                0 20px 40px rgba(0,0,0,0.35),
-                0 0 0 3px rgba(255,255,255,0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+                0 20px 40px rgba(0,0,0,0.4),
+                0 0 0 3px rgba(255,255,255,0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
-        /* Individual Button Color Accents */
+        /* Individual Button Color Accents - More visible */
         .site-btn:nth-child(1):hover,
-        .site-btn:nth-child(1):active { background: rgba(255, 107, 107, 0.25); }
+        .site-btn:nth-child(1):active { background: rgba(255, 107, 107, 0.4); }
         .site-btn:nth-child(2):hover,
-        .site-btn:nth-child(2):active { background: rgba(255, 159, 28, 0.25); }
+        .site-btn:nth-child(2):active { background: rgba(255, 159, 28, 0.4); }
         .site-btn:nth-child(3):hover,
-        .site-btn:nth-child(3):active { background: rgba(77, 171, 247, 0.25); }
+        .site-btn:nth-child(3):active { background: rgba(77, 171, 247, 0.4); }
         .site-btn:nth-child(4):hover,
-        .site-btn:nth-child(4):active { background: rgba(229, 83, 128, 0.25); }
+        .site-btn:nth-child(4):active { background: rgba(229, 83, 128, 0.4); }
 
         /* ============================================
-           FUTURE BUTTON SLOT (replaces Launch All)
+           FUTURE BUTTON SLOT - IMPROVED VISIBILITY
            ============================================ */
         .future-btn-slot {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px dashed rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.7);
             padding: 20px 15px;
             font-size: clamp(1em, 4vw, 1.2em);
             border-radius: 18px;
@@ -379,19 +390,20 @@
             gap: 15px;
             min-height: 80px;
             cursor: default;
-            opacity: 0.6;
             transition: all 0.3s ease;
             width: 100%;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            font-weight: 500;
         }
 
         .future-btn-slot:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
         .emoji {
             font-size: clamp(1.8em, 6vw, 2.2em);
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
             transition: all 0.3s ease;
             flex-shrink: 0;
         }
@@ -399,23 +411,24 @@
         .site-btn:hover .emoji,
         .site-btn:active .emoji {
             transform: scale(1.2) rotate(10deg);
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
         }
 
         .btn-text {
-            font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
             font-size: clamp(0.9em, 4vw, 1.1em);
             transition: all 0.3s ease;
+            letter-spacing: 0.5px;
         }
 
         .site-btn:hover .btn-text,
         .site-btn:active .btn-text {
-            text-shadow: 0 0 8px rgba(255,255,255,0.8);
+            text-shadow: 0 0 20px rgba(255,255,255,0.3);
         }
 
         /* ============================================
-           SUB-MENU PAGE STYLES
+           SUB-MENU PAGE STYLES - IMPROVED VISIBILITY
            ============================================ */
         .sub-menu-title {
             font-size: clamp(2.5em, 7vw, 4em);
@@ -425,16 +438,21 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 800;
+            text-shadow: 0 0 30px rgba(0,0,0,0.4);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .sub-menu-subtitle {
             font-size: 1.2em;
-            opacity: 0.9;
+            opacity: 1;
             margin-bottom: 30px;
-            background: linear-gradient(45deg, #FFEB3B, #00BCD4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            font-weight: 500;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 15px;
+            display: inline-block;
         }
 
         .sub-grid {
@@ -445,7 +463,7 @@
         }
 
         .sub-site-btn {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border: 2px solid rgba(255, 255, 255, 0.2);
             color: white;
             padding: 25px 20px;
@@ -460,12 +478,13 @@
             justify-content: center;
             gap: 12px;
             min-height: 120px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             -webkit-tap-highlight-color: transparent;
             position: relative;
             overflow: hidden;
             touch-action: manipulation;
             width: 100%;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
 
         .sub-site-btn::before {
@@ -475,7 +494,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
             transition: left 0.7s;
         }
 
@@ -484,9 +503,10 @@
         }
 
         .sub-site-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
             transform: translateY(-8px) scale(1.05);
-            border-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
         .sub-site-btn .emoji {
@@ -495,35 +515,41 @@
 
         .sub-site-btn .btn-text {
             font-size: 1.1em;
+            font-weight: 700;
         }
 
         .sub-site-btn .site-desc {
             font-size: 0.85em;
-            opacity: 0.7;
+            opacity: 0.8;
             font-weight: 400;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.4);
         }
 
         /* ============================================
-           FOOTER
+           FOOTER - IMPROVED VISIBILITY
            ============================================ */
         .footer {
             margin-top: 35px;
             padding: 20px 15px;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 18px;
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .footer p {
-            opacity: 0.9;
+            opacity: 1;
             font-size: clamp(0.85em, 3.5vw, 1em);
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            font-weight: 500;
+            line-height: 1.6;
             background: linear-gradient(45deg, #FFEB3B, #E91E63, #00BCD4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1.4;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         /* ============================================
@@ -537,6 +563,7 @@
                 gap: 10px;
                 margin-bottom: 20px;
                 padding: 15px;
+                background: rgba(0, 0, 0, 0.4);
             }
             
             .brand-text {
@@ -557,8 +584,9 @@
             }
             
             .header { 
-                padding: 18px 15px; 
-                margin-bottom: 25px; 
+                padding: 20px 15px; 
+                margin-bottom: 25px;
+                background: rgba(0, 0, 0, 0.6);
             }
             
             .launcher-buttons { 
@@ -569,7 +597,8 @@
             .site-btn { 
                 padding: 16px 12px; 
                 min-height: 65px; 
-                border-radius: 15px; 
+                border-radius: 15px;
+                background: rgba(0, 0, 0, 0.6);
             }
             
             .sub-grid { 
@@ -580,6 +609,7 @@
             .sub-site-btn { 
                 min-height: 90px; 
                 padding: 18px 15px;
+                background: rgba(0, 0, 0, 0.6);
             }
             
             .sub-site-btn .emoji {
@@ -593,7 +623,8 @@
             
             .category-tag { 
                 font-size: 0.75em; 
-                padding: 5px 10px; 
+                padding: 5px 12px;
+                background: rgba(0, 0, 0, 0.6);
             }
             
             .back-btn { 
@@ -601,11 +632,13 @@
                 left: 10px; 
                 padding: 8px 14px;
                 font-size: 0.85em;
+                background: rgba(0, 0, 0, 0.7);
             }
             
             .future-btn-slot {
                 min-height: 60px;
                 padding: 15px 12px;
+                background: rgba(0, 0, 0, 0.4);
             }
         }
 
@@ -642,6 +675,7 @@
             .site-btn, .sub-site-btn {
                 min-height: 55px;
                 padding: 12px 10px;
+                background: rgba(0, 0, 0, 0.6);
             }
             
             .site-btn .emoji, .sub-site-btn .emoji {
@@ -658,7 +692,7 @@
             
             .category-tag {
                 font-size: 0.7em;
-                padding: 4px 8px;
+                padding: 4px 10px;
             }
         }
 
@@ -669,7 +703,7 @@
 
         .particle {
             position: fixed;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 50%;
             pointer-events: none;
             z-index: 1;
@@ -707,7 +741,7 @@
                 </div>
                 <div class="brand-text">
                     <div class="brand-name">Omnia Zone</div>
-                    <div class="brand-tagline">Your All-in-One free streaming portal</div>
+                    <div class="brand-tagline">Your All-in-One Entertainment Portal</div>
                 </div>
             </div>
 
@@ -722,7 +756,7 @@
 
             <!-- HEADER -->
             <div class="header">
-                <h1>Free Streaming Index Portal</h1>
+                <h1>Ultimate Entertainment Portal</h1>
                 <p>One click to infinite entertainment worlds ✨</p>
             </div>
 
@@ -776,7 +810,7 @@
 
             <!-- FOOTER -->
             <div class="footer">
-                <p>✨ The Omnia Zone for all your entertainment needs | Expandable & Future-Proof</p>
+                <p>✨ The ultimate hub for all your entertainment needs | Expandable & Future-Proof</p>
             </div>
         </div>
     </div>
@@ -1023,7 +1057,7 @@
                 particle.style.left = `${posX}%`;
                 particle.style.top = `${posY}%`;
                 particle.style.animation = `float ${duration}s ${delay}s infinite ease-in-out`;
-                particle.style.opacity = Math.random() * 0.2 + 0.1;
+                particle.style.opacity = Math.random() * 0.15 + 0.05;
                 
                 container.appendChild(particle);
             }
