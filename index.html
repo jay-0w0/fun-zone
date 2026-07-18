@@ -292,7 +292,7 @@
         }
 
         /* ============================================
-           ⭐ NEW BUTTON STYLES - Applied to ALL buttons
+           ⭐ NEW BUTTON STYLES - WITH STRONG GLOW EFFECTS
            ============================================ */
         
         /* Main Button Grid */
@@ -305,25 +305,25 @@
 
         /* 
            📝 NEW BUTTON STYLE - Applied to ALL main buttons
-           Colors customized for Omnia Zone
+           With STRONG glow effects
         */
         .site-btn {
             position: relative;
             padding: 20px 15px;
             min-height: 80px;
             border-radius: 7px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             font-size: clamp(1em, 4vw, 1.2em);
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 2px;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.2);
             color: #fff;
             overflow: hidden;
             box-shadow: 0 0 0 0 transparent;
-            -webkit-transition: all 0.2s ease-in;
-            -moz-transition: all 0.2s ease-in;
-            transition: all 0.2s ease-in;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -333,23 +333,22 @@
             backdrop-filter: blur(10px);
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
-        /* Button hover effect */
+        /* Button hover effect with STRONG glow */
         .site-btn:hover {
-            box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.15);
-            -webkit-transition: all 0.2s ease-out;
-            -moz-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
-            transform: translateY(-3px);
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            transform: translateY(-5px) scale(1.02);
         }
 
         /* Button shine animation */
         .site-btn:hover::before {
-            -webkit-animation: sh02 0.5s 0s linear;
-            -moz-animation: sh02 0.5s 0s linear;
-            animation: sh02 0.5s 0s linear;
+            -webkit-animation: sh02 0.6s 0s linear;
+            -moz-animation: sh02 0.6s 0s linear;
+            animation: sh02 0.6s 0s linear;
         }
 
         .site-btn::before {
@@ -362,7 +361,7 @@
             left: 0%;
             opacity: 0;
             background: #fff;
-            box-shadow: 0 0 50px 30px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 60px 40px rgba(255, 255, 255, 0.2);
             -webkit-transform: skewX(-20deg);
             -moz-transform: skewX(-20deg);
             -ms-transform: skewX(-20deg);
@@ -385,7 +384,7 @@
         }
 
         .site-btn:active {
-            box-shadow: 0 0 0 0 transparent;
+            box-shadow: 0 0 0 0 transparent !important;
             -webkit-transition: box-shadow 0.2s ease-in;
             -moz-transition: box-shadow 0.2s ease-in;
             transition: box-shadow 0.2s ease-in;
@@ -393,62 +392,74 @@
         }
 
         /* ============================================
-           🎨 INDIVIDUAL BUTTON COLORS
+           🎨 INDIVIDUAL BUTTON COLORS WITH STRONG GLOW
            Each button gets a unique color that matches Omnia Zone
            ============================================ */
 
-        /* MOVIES Button - Purple theme */
+        /* MOVIES Button - Purple glow */
         .site-btn:nth-child(1) {
-            border-color: rgba(101, 78, 163, 0.8);
+            border-color: rgba(101, 78, 163, 0.6);
         }
         .site-btn:nth-child(1):hover {
-            background: rgba(101, 78, 163, 0.3);
-            box-shadow: 0 0 30px 5px rgba(101, 78, 163, 0.4);
+            background: rgba(101, 78, 163, 0.2);
             border-color: rgba(101, 78, 163, 1);
+            box-shadow: 
+                0 0 30px 10px rgba(101, 78, 163, 0.6),
+                0 0 60px 20px rgba(101, 78, 163, 0.3),
+                0 0 100px 30px rgba(101, 78, 163, 0.15);
         }
 
-        /* ANIME Button - Pink theme */
+        /* ANIME Button - Pink glow */
         .site-btn:nth-child(2) {
-            border-color: rgba(233, 89, 155, 0.8);
+            border-color: rgba(233, 89, 155, 0.6);
         }
         .site-btn:nth-child(2):hover {
-            background: rgba(233, 89, 155, 0.3);
-            box-shadow: 0 0 30px 5px rgba(233, 89, 155, 0.4);
+            background: rgba(233, 89, 155, 0.2);
             border-color: rgba(233, 89, 155, 1);
+            box-shadow: 
+                0 0 30px 10px rgba(233, 89, 155, 0.6),
+                0 0 60px 20px rgba(233, 89, 155, 0.3),
+                0 0 100px 30px rgba(233, 89, 155, 0.15);
         }
 
-        /* MANGA Button - Blue/Teal theme */
+        /* MANGA Button - Teal glow */
         .site-btn:nth-child(3) {
-            border-color: rgba(0, 188, 212, 0.8);
+            border-color: rgba(0, 188, 212, 0.6);
         }
         .site-btn:nth-child(3):hover {
-            background: rgba(0, 188, 212, 0.3);
-            box-shadow: 0 0 30px 5px rgba(0, 188, 212, 0.4);
+            background: rgba(0, 188, 212, 0.2);
             border-color: rgba(0, 188, 212, 1);
+            box-shadow: 
+                0 0 30px 10px rgba(0, 188, 212, 0.6),
+                0 0 60px 20px rgba(0, 188, 212, 0.3),
+                0 0 100px 30px rgba(0, 188, 212, 0.15);
         }
 
-        /* Novels Button - Orange/Gold theme */
+        /* Novels Button - Orange glow */
         .site-btn:nth-child(4) {
-            border-color: rgba(255, 152, 0, 0.8);
+            border-color: rgba(255, 152, 0, 0.6);
         }
         .site-btn:nth-child(4):hover {
-            background: rgba(255, 152, 0, 0.3);
-            box-shadow: 0 0 30px 5px rgba(255, 152, 0, 0.4);
+            background: rgba(255, 152, 0, 0.2);
             border-color: rgba(255, 152, 0, 1);
+            box-shadow: 
+                0 0 30px 10px rgba(255, 152, 0, 0.6),
+                0 0 60px 20px rgba(255, 152, 0, 0.3),
+                0 0 100px 30px rgba(255, 152, 0, 0.15);
         }
 
-        /* Coming Soon Button - Light theme (slightly different) */
+        /* Coming Soon Button - White glow */
         .future-btn-slot {
             position: relative;
             padding: 20px 15px;
             min-height: 80px;
             border-radius: 7px;
-            border: 1px dashed rgba(255, 255, 255, 0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.2);
             font-size: clamp(1em, 4vw, 1.2em);
             text-transform: uppercase;
             font-weight: 600;
             letter-spacing: 2px;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.1);
             color: rgba(255, 255, 255, 0.5);
             overflow: hidden;
             display: flex;
@@ -465,10 +476,13 @@
         .future-btn-slot:hover {
             border-color: rgba(255, 255, 255, 0.4);
             background: rgba(255, 255, 255, 0.05);
+            box-shadow: 
+                0 0 30px 10px rgba(255, 255, 255, 0.1),
+                0 0 60px 20px rgba(255, 255, 255, 0.05);
         }
 
         /* ============================================
-           SUB-MENU BUTTONS - Same style but smaller
+           SUB-MENU BUTTONS - With glow effects
            ============================================ */
         .sub-grid {
             display: grid;
@@ -482,17 +496,17 @@
             padding: 25px 20px;
             min-height: 120px;
             border-radius: 7px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.15);
             font-size: 1.1em;
             font-weight: 600;
             letter-spacing: 1px;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.15);
             color: #fff;
             overflow: hidden;
             box-shadow: 0 0 0 0 transparent;
-            -webkit-transition: all 0.2s ease-in;
-            -moz-transition: all 0.2s ease-in;
-            transition: all 0.2s ease-in;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             cursor: pointer;
             display: flex;
             flex-direction: column;
@@ -503,22 +517,25 @@
             backdrop-filter: blur(10px);
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .sub-site-btn:hover {
-            box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.1);
-            -webkit-transition: all 0.2s ease-out;
-            -moz-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                0 0 30px 10px rgba(255, 255, 255, 0.15),
+                0 0 60px 20px rgba(255, 255, 255, 0.08);
         }
 
         .sub-site-btn:hover::before {
-            -webkit-animation: sh02 0.5s 0s linear;
-            -moz-animation: sh02 0.5s 0s linear;
-            animation: sh02 0.5s 0s linear;
+            -webkit-animation: sh02 0.6s 0s linear;
+            -moz-animation: sh02 0.6s 0s linear;
+            animation: sh02 0.6s 0s linear;
         }
 
         .sub-site-btn::before {
@@ -531,7 +548,7 @@
             left: 0%;
             opacity: 0;
             background: #fff;
-            box-shadow: 0 0 50px 30px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 60px 40px rgba(255, 255, 255, 0.15);
             -webkit-transform: skewX(-20deg);
             -moz-transform: skewX(-20deg);
             -ms-transform: skewX(-20deg);
@@ -540,7 +557,7 @@
         }
 
         .sub-site-btn:active {
-            box-shadow: 0 0 0 0 transparent;
+            box-shadow: 0 0 0 0 transparent !important;
             -webkit-transition: box-shadow 0.2s ease-in;
             -moz-transition: box-shadow 0.2s ease-in;
             transition: box-shadow 0.2s ease-in;
@@ -553,7 +570,7 @@
 
         .sub-site-btn .btn-text {
             font-size: 1.1em;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .sub-site-btn .site-desc {
@@ -599,13 +616,13 @@
         }
 
         .site-btn:hover .emoji {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
+            transform: scale(1.15) rotate(5deg);
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
         }
 
         .btn-text {
-            font-weight: 600;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             font-size: clamp(0.9em, 4vw, 1.1em);
             transition: all 0.3s ease;
             letter-spacing: 2px;
@@ -842,27 +859,28 @@
                 <!-- 
                     📝 All buttons now use the new style from Uiverse.io
                     Each has a unique color that matches Omnia Zone
+                    With STRONG visible glow effects!
                 -->
                 
-                <!-- MOVIES Button - Purple -->
+                <!-- MOVIES Button - Purple glow -->
                 <button class="site-btn" onclick="showSubMenu('movies')">
                     <span class="emoji">🎥</span>
                     <span class="btn-text">MOVIES</span>
                 </button>
 
-                <!-- ANIME Button - Pink -->
+                <!-- ANIME Button - Pink glow -->
                 <button class="site-btn" onclick="showSubMenu('anime')">
                     <span class="emoji">🍿</span>
                     <span class="btn-text">ANIME</span>
                 </button>
 
-                <!-- MANGA Button - Teal -->
+                <!-- MANGA Button - Teal glow -->
                 <button class="site-btn" onclick="showSubMenu('manga')">
                     <span class="emoji">📚</span>
                     <span class="btn-text">MANGA</span>
                 </button>
                 
-                <!-- NOVELS Button - Orange -->
+                <!-- NOVELS Button - Orange glow -->
                 <button class="site-btn" onclick="showSubMenu('novels')">
                     <span class="emoji">📖</span>
                     <span class="btn-text">Novels</span>
@@ -900,7 +918,7 @@
                 
                 <div class="sub-grid">
                     <!-- 
-                        📝 Sub-menu buttons also use the new style
+                        📝 Sub-menu buttons also use the new style with glow
                     -->
                     <button class="sub-site-btn" onclick="openSite('https://anikai.to/home')">
                         <span class="emoji">🎬</span>
@@ -1124,14 +1142,6 @@
             const buttons = document.querySelectorAll('.site-btn, .sub-site-btn');
             
             buttons.forEach(button => {
-                button.addEventListener('mouseenter', function() {
-                    // Already handled by CSS
-                });
-                
-                button.addEventListener('mouseleave', function() {
-                    // Already handled by CSS
-                });
-                
                 button.addEventListener('touchstart', function() {
                     this.style.transform = 'scale(0.97)';
                 });
