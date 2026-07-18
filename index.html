@@ -292,8 +292,10 @@
         }
 
         /* ============================================
-           MAIN PAGE BUTTONS
+           ⭐ NEW BUTTON STYLES - Applied to ALL buttons
            ============================================ */
+        
+        /* Main Button Grid */
         .launcher-buttons {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -301,119 +303,264 @@
             margin-bottom: 35px;
         }
 
+        /* 
+           📝 NEW BUTTON STYLE - Applied to ALL main buttons
+           Colors customized for Omnia Zone
+        */
         .site-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.25);
-            color: white;
+            position: relative;
             padding: 20px 15px;
+            min-height: 80px;
+            border-radius: 7px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             font-size: clamp(1em, 4vw, 1.2em);
-            border-radius: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background: transparent;
+            color: #fff;
+            overflow: hidden;
+            box-shadow: 0 0 0 0 transparent;
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            backdrop-filter: blur(20px);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
-            position: relative;
-            overflow: hidden;
-            min-height: 80px;
-            box-shadow: 
-                0 8px 25px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            width: 100%;
+            backdrop-filter: blur(10px);
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
-            width: 100%;
             text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Button hover effect */
+        .site-btn:hover {
+            box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.15);
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+            transform: translateY(-3px);
+        }
+
+        /* Button shine animation */
+        .site-btn:hover::before {
+            -webkit-animation: sh02 0.5s 0s linear;
+            -moz-animation: sh02 0.5s 0s linear;
+            animation: sh02 0.5s 0s linear;
         }
 
         .site-btn::before {
             content: '';
+            display: block;
+            width: 0px;
+            height: 86%;
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-            transition: left 0.7s;
+            top: 7%;
+            left: 0%;
+            opacity: 0;
+            background: #fff;
+            box-shadow: 0 0 50px 30px rgba(255, 255, 255, 0.3);
+            -webkit-transform: skewX(-20deg);
+            -moz-transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            -o-transform: skewX(-20deg);
+            transform: skewX(-20deg);
         }
 
-        .site-btn:hover::before,
-        .site-btn:active::before {
-            left: 100%;
+        @keyframes sh02 {
+            from {
+                opacity: 0;
+                left: 0%;
+            }
+            50% {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                left: 100%;
+            }
         }
 
-        .site-btn:hover,
         .site-btn:active {
-            background: rgba(255, 255, 255, 0.18);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 
-                0 20px 40px rgba(0,0,0,0.35),
-                0 0 0 3px rgba(255,255,255,0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 0 0 transparent;
+            -webkit-transition: box-shadow 0.2s ease-in;
+            -moz-transition: box-shadow 0.2s ease-in;
+            transition: box-shadow 0.2s ease-in;
+            transform: scale(0.97);
         }
-
-        /* Individual Button Color Accents */
-        .site-btn:nth-child(1):hover,
-        .site-btn:nth-child(1):active { background: rgba(255, 107, 107, 0.25); }
-        .site-btn:nth-child(2):hover,
-        .site-btn:nth-child(2):active { background: rgba(255, 159, 28, 0.25); }
-        .site-btn:nth-child(3):hover,
-        .site-btn:nth-child(3):active { background: rgba(77, 171, 247, 0.25); }
-        .site-btn:nth-child(4):hover,
-        .site-btn:nth-child(4):active { background: rgba(229, 83, 128, 0.25); }
 
         /* ============================================
-           FUTURE BUTTON SLOT
+           🎨 INDIVIDUAL BUTTON COLORS
+           Each button gets a unique color that matches Omnia Zone
            ============================================ */
+
+        /* MOVIES Button - Purple theme */
+        .site-btn:nth-child(1) {
+            border-color: rgba(101, 78, 163, 0.8);
+        }
+        .site-btn:nth-child(1):hover {
+            background: rgba(101, 78, 163, 0.3);
+            box-shadow: 0 0 30px 5px rgba(101, 78, 163, 0.4);
+            border-color: rgba(101, 78, 163, 1);
+        }
+
+        /* ANIME Button - Pink theme */
+        .site-btn:nth-child(2) {
+            border-color: rgba(233, 89, 155, 0.8);
+        }
+        .site-btn:nth-child(2):hover {
+            background: rgba(233, 89, 155, 0.3);
+            box-shadow: 0 0 30px 5px rgba(233, 89, 155, 0.4);
+            border-color: rgba(233, 89, 155, 1);
+        }
+
+        /* MANGA Button - Blue/Teal theme */
+        .site-btn:nth-child(3) {
+            border-color: rgba(0, 188, 212, 0.8);
+        }
+        .site-btn:nth-child(3):hover {
+            background: rgba(0, 188, 212, 0.3);
+            box-shadow: 0 0 30px 5px rgba(0, 188, 212, 0.4);
+            border-color: rgba(0, 188, 212, 1);
+        }
+
+        /* Novels Button - Orange/Gold theme */
+        .site-btn:nth-child(4) {
+            border-color: rgba(255, 152, 0, 0.8);
+        }
+        .site-btn:nth-child(4):hover {
+            background: rgba(255, 152, 0, 0.3);
+            box-shadow: 0 0 30px 5px rgba(255, 152, 0, 0.4);
+            border-color: rgba(255, 152, 0, 1);
+        }
+
+        /* Coming Soon Button - Light theme (slightly different) */
         .future-btn-slot {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px dashed rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.6);
+            position: relative;
             padding: 20px 15px;
+            min-height: 80px;
+            border-radius: 7px;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
             font-size: clamp(1em, 4vw, 1.2em);
-            border-radius: 18px;
-            backdrop-filter: blur(20px);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.5);
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
-            min-height: 80px;
-            cursor: default;
-            transition: all 0.3s ease;
             width: 100%;
+            backdrop-filter: blur(10px);
+            cursor: default;
             text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
         }
 
         .future-btn-slot:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .emoji {
-            font-size: clamp(1.8em, 6vw, 2.2em);
-            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-            transition: all 0.3s ease;
-            flex-shrink: 0;
+        /* ============================================
+           SUB-MENU BUTTONS - Same style but smaller
+           ============================================ */
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .site-btn:hover .emoji,
-        .site-btn:active .emoji {
-            transform: scale(1.2) rotate(10deg);
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
-        }
-
-        .btn-text {
+        .sub-site-btn {
+            position: relative;
+            padding: 25px 20px;
+            min-height: 120px;
+            border-radius: 7px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1.1em;
             font-weight: 600;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            font-size: clamp(0.9em, 4vw, 1.1em);
-            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            background: transparent;
+            color: #fff;
+            overflow: hidden;
+            box-shadow: 0 0 0 0 transparent;
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        .site-btn:hover .btn-text,
-        .site-btn:active .btn-text {
-            text-shadow: 0 0 20px rgba(255,255,255,0.3);
+        .sub-site-btn:hover {
+            box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.1);
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .sub-site-btn:hover::before {
+            -webkit-animation: sh02 0.5s 0s linear;
+            -moz-animation: sh02 0.5s 0s linear;
+            animation: sh02 0.5s 0s linear;
+        }
+
+        .sub-site-btn::before {
+            content: '';
+            display: block;
+            width: 0px;
+            height: 86%;
+            position: absolute;
+            top: 7%;
+            left: 0%;
+            opacity: 0;
+            background: #fff;
+            box-shadow: 0 0 50px 30px rgba(255, 255, 255, 0.2);
+            -webkit-transform: skewX(-20deg);
+            -moz-transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            -o-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+        }
+
+        .sub-site-btn:active {
+            box-shadow: 0 0 0 0 transparent;
+            -webkit-transition: box-shadow 0.2s ease-in;
+            -moz-transition: box-shadow 0.2s ease-in;
+            transition: box-shadow 0.2s ease-in;
+            transform: scale(0.97);
+        }
+
+        .sub-site-btn .emoji {
+            font-size: 2.5em;
+        }
+
+        .sub-site-btn .btn-text {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .sub-site-btn .site-desc {
+            font-size: 0.85em;
+            opacity: 0.7;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         /* ============================================
@@ -441,71 +588,27 @@
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        .sub-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+        /* ============================================
+           EMOJI & TEXT STYLES
+           ============================================ */
+        .emoji {
+            font-size: clamp(1.8em, 6vw, 2.2em);
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+            transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
-        .sub-site-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 25px 20px;
-            font-size: 1.1em;
-            border-radius: 18px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            backdrop-filter: blur(20px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            min-height: 120px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            -webkit-tap-highlight-color: transparent;
-            position: relative;
-            overflow: hidden;
-            touch-action: manipulation;
-            width: 100%;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        .site-btn:hover .emoji {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
         }
 
-        .sub-site-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-            transition: left 0.7s;
-        }
-
-        .sub-site-btn:hover::before {
-            left: 100%;
-        }
-
-        .sub-site-btn:hover {
-            transform: translateY(-8px) scale(1.05);
-            border-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .sub-site-btn .emoji {
-            font-size: 2.5em;
-        }
-
-        .sub-site-btn .btn-text {
-            font-size: 1.1em;
-        }
-
-        .sub-site-btn .site-desc {
-            font-size: 0.85em;
-            opacity: 0.7;
-            font-weight: 400;
+        .btn-text {
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            font-size: clamp(0.9em, 4vw, 1.1em);
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
         }
 
         /* ============================================
@@ -575,7 +678,6 @@
             .site-btn { 
                 padding: 16px 12px; 
                 min-height: 65px; 
-                border-radius: 15px; 
             }
             
             .sub-grid { 
@@ -655,7 +757,8 @@
             }
             
             .btn-text {
-                font-size: 0.9em;
+                font-size: 0.85em;
+                letter-spacing: 1px;
             }
             
             .categories {
@@ -733,44 +836,40 @@
             </div>
 
             <!-- ============================================
-                 MAIN BUTTONS - Add/Remove buttons here
+                 MAIN BUTTONS - All use the NEW button style
                  ============================================ -->
             <div class="launcher-buttons">
                 <!-- 
-                    📝 HOW TO ADD/REMOVE MAIN BUTTONS:
-                    - Copy the entire <button> block below
-                    - Change the onclick to: onclick="showSubMenu('categoryName')"
-                    - Change the emoji and text
-                    - Each category must have a matching sub-menu in the SUB-MENUS section
+                    📝 All buttons now use the new style from Uiverse.io
+                    Each has a unique color that matches Omnia Zone
                 -->
                 
-                <!-- MOVIES Button -->
+                <!-- MOVIES Button - Purple -->
                 <button class="site-btn" onclick="showSubMenu('movies')">
                     <span class="emoji">🎥</span>
                     <span class="btn-text">MOVIES</span>
                 </button>
 
-                <!-- ANIME Button -->
+                <!-- ANIME Button - Pink -->
                 <button class="site-btn" onclick="showSubMenu('anime')">
                     <span class="emoji">🍿</span>
                     <span class="btn-text">ANIME</span>
                 </button>
 
-                <!-- MANGA Button -->
+                <!-- MANGA Button - Teal -->
                 <button class="site-btn" onclick="showSubMenu('manga')">
                     <span class="emoji">📚</span>
                     <span class="btn-text">MANGA</span>
                 </button>
                 
-                <!-- NOVELS Button -->
+                <!-- NOVELS Button - Orange -->
                 <button class="site-btn" onclick="showSubMenu('novels')">
                     <span class="emoji">📖</span>
                     <span class="btn-text">Novels</span>
                 </button>
 
                 <!-- 
-                    🚀 FUTURE BUTTON SLOT
-                    This is a placeholder for future buttons.
+                    🚀 Coming Soon - Styled differently (dashed border)
                     To activate: replace "future-btn-slot" with "site-btn"
                     and add onclick functionality.
                 -->
@@ -801,10 +900,7 @@
                 
                 <div class="sub-grid">
                     <!-- 
-                        📝 HOW TO ADD MOVIE SITES:
-                        - Copy the <button> block below
-                        - Change the onclick to: onclick="openSite('YOUR_URL')"
-                        - Change the emoji, name, and description
+                        📝 Sub-menu buttons also use the new style
                     -->
                     <button class="sub-site-btn" onclick="openSite('https://anikai.to/home')">
                         <span class="emoji">🎬</span>
@@ -840,12 +936,6 @@
                 <p class="sub-menu-subtitle">Your gateway to the anime universe</p>
                 
                 <div class="sub-grid">
-                    <!-- 
-                        📝 HOW TO ADD ANIME SITES:
-                        - Copy the <button> block below
-                        - Change the onclick to: onclick="openSite('YOUR_URL')"
-                        - Change the emoji, name, and description
-                    -->
                     <button class="sub-site-btn" onclick="openSite('https://animesuge.bz/home')">
                         <span class="emoji">🇯🇵</span>
                         <span class="btn-text">AnimeSuge</span>
@@ -886,12 +976,6 @@
                 <p class="sub-menu-subtitle">Dive into the world of manga</p>
                 
                 <div class="sub-grid">
-                    <!-- 
-                        📝 HOW TO ADD MANGA SITES:
-                        - Copy the <button> block below
-                        - Change the onclick to: onclick="openSite('YOUR_URL')"
-                        - Change the emoji, name, and description
-                    -->
                     <button class="sub-site-btn" onclick="openSite('https://mangafire.to/home')">
                         <span class="emoji">📖</span>
                         <span class="btn-text">MangaFire</span>
@@ -926,12 +1010,6 @@
                 <p class="sub-menu-subtitle">Discover light novels and web novels</p>
                 
                 <div class="sub-grid">
-                    <!-- 
-                        📝 HOW TO ADD NOVEL SITES:
-                        - Copy the <button> block below
-                        - Change the onclick to: onclick="openSite('YOUR_URL')"
-                        - Change the emoji, name, and description
-                    -->
                     <button class="sub-site-btn" onclick="openSite('https://www.webnovel.com/tags/light-novel-novel')">
                         <span class="emoji">📕</span>
                         <span class="btn-text">WebNovel</span>
@@ -945,4 +1023,126 @@
                     </button>
 
                     <button class="sub-site-btn" onclick="openSite('https://www.readlightnovel.org/')">
-                        <span class
+                        <span class="emoji">🌟</span>
+                        <span class="btn-text">Read Light Novel</span>
+                        <span class="site-desc">Free Light Novels</span>
+                    </button>
+
+                    <button class="sub-site-btn" onclick="openSite('https://www.royalroad.com/')">
+                        <span class="emoji">⚔️</span>
+                        <span class="btn-text">Royal Road</span>
+                        <span class="site-desc">Web Novels</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // NAVIGATION FUNCTIONS
+        // ============================================
+
+        function showSubMenu(category) {
+            // Hide all sub-menus first
+            document.querySelectorAll('.sub-menu').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Show the selected sub-menu
+            const target = document.getElementById('sub' + category.charAt(0).toUpperCase() + category.slice(1));
+            if (target) {
+                target.style.display = 'block';
+            }
+
+            // Switch pages
+            document.getElementById('mainPage').classList.remove('active');
+            document.getElementById('subMenuPage').classList.add('active');
+            
+            // Show back button
+            document.getElementById('backBtn').classList.add('visible');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goBack() {
+            document.getElementById('subMenuPage').classList.remove('active');
+            document.getElementById('mainPage').classList.add('active');
+            document.getElementById('backBtn').classList.remove('visible');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================
+        // SITE OPENING FUNCTIONS
+        // ============================================
+
+        function openSite(url) {
+            const newWindow = window.open(url, '_blank');
+            if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                window.location.href = url;
+            }
+        }
+
+        // ============================================
+        // PARTICLES BACKGROUND
+        // ============================================
+
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 8;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 6 + 3;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const duration = Math.random() * 15 + 15;
+                const delay = Math.random() * 5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animation = `float ${duration}s ${delay}s infinite ease-in-out`;
+                particle.style.opacity = Math.random() * 0.15 + 0.05;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // ============================================
+        // MOBILE TOUCH SUPPORT
+        // ============================================
+        document.addEventListener('touchstart', function() {}, {passive: true});
+
+        window.onload = function() {
+            createParticles();
+            
+            const buttons = document.querySelectorAll('.site-btn, .sub-site-btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    // Already handled by CSS
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    // Already handled by CSS
+                });
+                
+                button.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.97)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        };
+    </script>
+</body>
+</html>
