@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎬 EntertainHub - Ultimate Entertainment Portal</title>
+    <title>🌀 Omnia Zone - Ultimate Entertainment Portal</title>
     <style>
         * {
             margin: 0;
@@ -112,6 +112,7 @@
             gap: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .back-btn:hover {
@@ -125,7 +126,7 @@
         }
 
         /* ============================================
-           ENTERAINHUB LOGO SECTION
+           OMNIA ZONE LOGO SECTION
            ============================================ */
         .logo-section {
             display: flex;
@@ -134,20 +135,39 @@
             gap: 15px;
             margin-bottom: 30px;
             padding: 20px;
+            flex-wrap: wrap;
         }
 
-        .logo {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
+        /* 
+            📝 LOGO IMAGE SLOT - Replace the URL below with your logo image
+            Recommended size: 60x60px or larger (will auto-scale)
+        */
+        .logo-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            object-fit: cover;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.3);
             animation: logoFloat 4s ease-in-out infinite;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #45B7D1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .logo-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+            object-fit: cover;
+        }
+
+        /* Fallback if no image is loaded */
+        .logo-image .logo-emoji {
+            font-size: 32px;
         }
 
         @keyframes logoFloat {
@@ -173,6 +193,10 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .brand-text {
+            text-align: left;
         }
 
         /* ============================================
@@ -261,6 +285,7 @@
             font-size: 0.9em;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
         }
 
         /* ============================================
@@ -294,6 +319,7 @@
                 0 8px 25px rgba(0, 0, 0, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
             -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .site-btn::before {
@@ -332,8 +358,32 @@
         .site-btn:nth-child(3):active { background: rgba(77, 171, 247, 0.25); }
         .site-btn:nth-child(4):hover,
         .site-btn:nth-child(4):active { background: rgba(229, 83, 128, 0.25); }
-        .site-btn:nth-child(5):hover,
-        .site-btn:nth-child(5):active { background: rgba(120, 119, 198, 0.25); }
+
+        /* ============================================
+           FUTURE BUTTON SLOT (replaces Launch All)
+           ============================================ */
+        .future-btn-slot {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 20px 15px;
+            font-size: clamp(1em, 4vw, 1.2em);
+            border-radius: 18px;
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            min-height: 80px;
+            cursor: default;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .future-btn-slot:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
 
         .emoji {
             font-size: clamp(1.8em, 6vw, 2.2em);
@@ -409,6 +459,7 @@
             -webkit-tap-highlight-color: transparent;
             position: relative;
             overflow: hidden;
+            touch-action: manipulation;
         }
 
         .sub-site-btn::before {
@@ -472,22 +523,118 @@
         /* ============================================
            MOBILE OPTIMIZATIONS
            ============================================ */
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             body { padding: 10px; }
-            .logo-section { margin-bottom: 25px; padding: 15px; }
-            .logo { width: 50px; height: 50px; font-size: 20px; }
-            .brand-name { font-size: 1.8em; }
-            .header { padding: 20px 15px; margin-bottom: 30px; }
-            .launcher-buttons { grid-template-columns: 1fr; gap: 15px; }
-            .site-btn { padding: 18px 12px; min-height: 70px; border-radius: 15px; }
-            .sub-grid { grid-template-columns: 1fr; gap: 15px; }
-            .sub-site-btn { min-height: 100px; padding: 20px; }
-            .categories { gap: 10px; }
-            .category-tag { font-size: 0.8em; padding: 6px 12px; }
+            
+            .logo-section {
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 20px;
+                padding: 15px;
+            }
+            
+            .brand-text {
+                text-align: center;
+            }
+            
+            .logo-image {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .brand-name {
+                font-size: 1.8em;
+            }
+            
+            .header { 
+                padding: 18px 15px; 
+                margin-bottom: 25px; 
+            }
+            
+            .launcher-buttons { 
+                grid-template-columns: 1fr; 
+                gap: 12px; 
+            }
+            
+            .site-btn { 
+                padding: 16px 12px; 
+                min-height: 65px; 
+                border-radius: 15px; 
+            }
+            
+            .sub-grid { 
+                grid-template-columns: 1fr; 
+                gap: 12px; 
+            }
+            
+            .sub-site-btn { 
+                min-height: 90px; 
+                padding: 18px 15px;
+            }
+            
+            .sub-site-btn .emoji {
+                font-size: 2em;
+            }
+            
+            .categories { 
+                gap: 8px; 
+                margin-bottom: 20px;
+            }
+            
+            .category-tag { 
+                font-size: 0.75em; 
+                padding: 5px 10px; 
+            }
+            
             .back-btn { 
                 top: 10px; 
                 left: 10px; 
-                padding: 10px 15px;
+                padding: 8px 14px;
+                font-size: 0.85em;
+            }
+            
+            .future-btn-slot {
+                min-height: 60px;
+                padding: 15px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-image {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .brand-name {
+                font-size: 1.5em;
+            }
+            
+            .brand-tagline {
+                font-size: 0.75em;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .sub-menu-title {
+                font-size: 2em;
+            }
+            
+            .sub-menu-subtitle {
+                font-size: 0.95em;
+            }
+            
+            .site-btn, .sub-site-btn {
+                min-height: 55px;
+                padding: 12px 10px;
+            }
+            
+            .site-btn .emoji, .sub-site-btn .emoji {
+                font-size: 1.5em;
+            }
+            
+            .btn-text {
                 font-size: 0.9em;
             }
         }
@@ -521,11 +668,22 @@
          ============================================ -->
     <div class="page active" id="mainPage">
         <div class="container">
-            <!-- LOGO SECTION -->
+            <!-- OMNIA ZONE LOGO SECTION -->
             <div class="logo-section">
-                <div class="logo">🎬</div>
-                <div>
-                    <div class="brand-name">EntertainHub</div>
+                <!-- 
+                    📝 LOGO IMAGE SLOT
+                    Replace the src URL below with your logo image
+                    Or replace the entire <img> tag with your logo
+                    Recommended: Square image (1:1 ratio) for best results
+                -->
+                <div class="logo-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌀%3C/text%3E%3C/svg%3E" 
+                         alt="Omnia Zone Logo" 
+                         id="siteLogo"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-emoji\'>&#127744;</span>'">
+                </div>
+                <div class="brand-text">
+                    <div class="brand-name">Omnia Zone</div>
                     <div class="brand-tagline">Your All-in-One Entertainment Portal</div>
                 </div>
             </div>
@@ -581,11 +739,16 @@
                     <span class="btn-text">Novels</span>
                 </button>
 
-                <!-- LAUNCH ALL Button (kept as is) -->
-                <button class="site-btn open-all" onclick="openAllSites()">
-                    <span class="emoji">🚀</span>
-                    <span class="btn-text">LAUNCH ALL SITES</span>
-                </button>
+                <!-- 
+                    🚀 FUTURE BUTTON SLOT
+                    This is a placeholder for future buttons.
+                    To activate: replace "future-btn-slot" with "site-btn"
+                    and add onclick functionality.
+                -->
+                <div class="future-btn-slot">
+                    <span class="emoji">🔮</span>
+                    <span class="btn-text">Coming Soon</span>
+                </div>
             </div>
 
             <!-- FOOTER -->
@@ -815,35 +978,6 @@
         }
 
         // ============================================
-        // LAUNCH ALL SITES
-        // ============================================
-
-        function openAllSites() {
-            // 
-            // 📝 EDIT THIS LIST to add/remove sites from "Launch All"
-            // 
-            const sites = [
-                'https://anikai.to/home',
-                'https://animesuge.bz/home',
-                'https://mangafire.to/home',
-                'https://www.netflix.com/browse',
-                'https://www.hotstar.com/in/home',
-                'https://ww3.soap2dayhdz.com/home/',
-                'https://www.webnovel.com/tags/light-novel-novel'
-            ];
-            
-            sites.forEach((site, index) => {
-                setTimeout(() => {
-                    openSite(site);
-                }, index * 300);
-            });
-            
-            setTimeout(() => {
-                alert('🚀 EntertainHub activated! Launching your complete entertainment experience...');
-            }, 500);
-        }
-
-        // ============================================
         // PARTICLES BACKGROUND
         // ============================================
 
@@ -872,6 +1006,9 @@
             }
         }
 
+        // ============================================
+        // MOBILE TOUCH SUPPORT
+        // ============================================
         document.addEventListener('touchstart', function() {}, {passive: true});
 
         window.onload = function() {
@@ -902,7 +1039,7 @@
                     }, 150);
                 });
             });
-        }
+        };
     </script>
 </body>
 </html>
